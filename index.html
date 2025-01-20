@@ -730,9 +730,30 @@
       // Scroll animation
       //
       // Select all anchor links that link to sections on the page
-      const scrollLinks = document.querySelectorAll('a[href^="/#"]');
+      // const scrollLinks = document.querySelectorAll('a[href^="/#"]');
 
-      console.log(scrollLinks)
+      // console.log(scrollLinks)
+
+      // scrollLinks.forEach(link => {
+      //   link.addEventListener('click', (event) => {
+      //     // Prevent default anchor link behavior (jumping to the section)
+      //     event.preventDefault();
+
+      //     // Get the target section's ID
+      //     const targetId = link.getAttribute('href').substring(1);
+      //     const targetSection = document.getElementById(targetId);
+
+      //     // Scroll smoothly to the target section
+      //     if (targetSection) {
+      //       animate(window, { scrollY: targetSection.offsetTop }, {
+      //         duration: 1, // You can adjust the duration
+      //         easing: 'ease-out'
+      //       });
+      //     }
+      //   });
+      // });
+      // Select all anchor links that link to sections on the page
+      const scrollLinks = document.querySelectorAll('a[href^="/#"]');
 
       scrollLinks.forEach(link => {
         link.addEventListener('click', (event) => {
@@ -743,11 +764,18 @@
           const targetId = link.getAttribute('href').substring(1);
           const targetSection = document.getElementById(targetId);
 
-          // Scroll smoothly to the target section
+          // Check if the target section exists
           if (targetSection) {
-            animate(window, { scrollY: targetSection.offsetTop }, {
-              duration: 1, // You can adjust the duration
-              easing: 'ease-out'
+            const targetPosition = targetSection.offsetTop;
+
+            // Use motion to animate scrollY to the target position
+            animate(document.documentElement, { scrollTop: targetPosition }, {
+              duration: 1, // Adjust duration as needed
+              easing: 'ease-out',
+              onUpdate: (latest) => {
+                // This manually sets the scroll position as the animation progresses
+                document.documentElement.scrollTop = latest.scrollTop;
+              }
             });
           }
         });
