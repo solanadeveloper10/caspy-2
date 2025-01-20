@@ -324,12 +324,37 @@
           src="image_10">
       </div>
     </div>
+    <style>
+      #how-to-buy {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      #floating-ghost {
+        /* position: -webkit-sticky;
+        /* For Safari */
+        position: sticky;
+        /* position: absolute; */
+        /* position: relative; */
+        /* top: 0; */
+        z-index: 100;
+        /* pointer-events: none; */
+        transition: top 0.2s ease-out, position 0.2s ease-out;
+
+        width: 43.43%;
+      }
+    </style>
     <section id="how-to-buy">
+      <!-- <div
+        class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto hidden md:flex flex-col lg:flex-row mt-32 relative"> -->
       <div
-        class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto hidden md:flex flex-col lg:flex-row mt-32 relative">
-        <div class="hidden lg:block absolute w-[43.43%] top-[4.56%] -left-[2.76%]"><img alt="floating image"
-            loading="lazy" width="834" height="632" decoding="async" data-nimg="1" class="animate-bounce-x"
-            style="color:transparent" srcset="image_54 1x, image_14 2x" src="image_14"></div>
+        class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto md:flex flex-col lg:flex-row mt-32 relative">
+        <!-- <div class="hidden lg:block absolute w-[43.43%] top-[4.56%] -left-[2.76%]" id="floating-ghost"> -->
+        <div id="floating-ghost">
+          <img alt="floating image" loading="lazy" width="834" height="632" decoding="async" data-nimg="1"
+            class="animate-bounce-x" style="color:transparent" srcset="image_54 1x, image_14 2x" src="image_14">
+        </div>
         <div class="~text-[4rem]/[6rem] leading-[5rem] font-boldenVan lg:w-[46%]">How To Buy</div>
         <div class="grow mt-[2rem] lg:mt-[7rem] mx-auto">
           <div class="flex min-h-[45.875rem]"><img alt="step" loading="lazy" width="340" height="519" decoding="async"
@@ -743,6 +768,29 @@
       // Scroll animation
       //
 
+      // Fixed Ghost image on How to buy section
+      // it needs to be fixed (works 50/50)
+      const fixedElement = document.getElementById('floating-ghost');
+      const section = document.getElementById('how-to-buy');
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      window.addEventListener('scroll', () => {
+        const sectionRect = section.getBoundingClientRect();
+        const sectionTop = sectionRect.top;
+
+        // Adjust the position of the fixed element relative to the section
+        if (sectionTop <= 0 && sectionTop > -sectionRect.height) {
+          fixedElement.style.position = 'fixed';
+          fixedElement.style.top = '0';
+        } else if (sectionTop <= -sectionRect.height) {
+          fixedElement.style.position = 'absolute';
+          fixedElement.style.top = `${sectionRect.height}px`;
+        } else {
+          fixedElement.style.position = 'absolute';
+          fixedElement.style.top = '20px'; // Adjust initial position as per needs
+        }
+      });
     };
 
   </script>
