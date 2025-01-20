@@ -34,18 +34,24 @@
 </head>
 
 <body class="__variable_b1bcfb __variable_80e019">
+  <style>
+    html {
+      scroll-behavior: auto;
+    }
+  </style>
+
   <header class="py-3 absolute z-30 right-0">
     <div class="px-4 lg:px-8 h-full w-full flex items-center justify-between">
       <div class=" hidden gap-6 lg:flex item-center">
         <nav class="flex items-center gap-3 text-black"><a
             class="relative rounded-full bg-white hover:bg-accent duration-300 transition-colors ease-out group ~py-1.5/2 ~px-4/5 h-fit w-fit uppercase ~text-sm/base"
-            href="/#about">About</a><a
+            href="#about">About</a><a
             class="relative rounded-full bg-white hover:bg-accent duration-300 transition-colors ease-out group ~py-1.5/2 ~px-4/5 h-fit w-fit uppercase ~text-sm/base"
-            href="/#tokenomics">tokenomics</a><a
+            href="#tokenomics">tokenomics</a><a
             class="relative rounded-full bg-white hover:bg-accent duration-300 transition-colors ease-out group ~py-1.5/2 ~px-4/5 h-fit w-fit uppercase ~text-sm/base"
-            href="/#how-to-buy">how to buy</a><a
+            href="#how-to-buy">how to buy</a><a
             class="relative rounded-full bg-white hover:bg-accent duration-300 transition-colors ease-out group ~py-1.5/2 ~px-4/5 h-fit w-fit uppercase ~text-sm/base"
-            href="/#faq">Faq</a><a href="https://x.com/spookiesolana" target="_blank" rel="noopener noreferrer"
+            href="#faq">Faq</a><a href="https://x.com/spookiesolana" target="_blank" rel="noopener noreferrer"
             class="uppercase ~text-sm/base relative rounded-full bg-white hover:bg-accent duration-300 transition-colors ease-out group ~py-1.5/2 ~px-4/5 h-fit w-fit"><svg
               stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
               class="text-black group-hover:text-white ~w-4/5 ~h-4/5 transition-colors ease-out duration-300"
@@ -93,7 +99,7 @@
             <div class="h-screen overflow-y-scroll p-6 flex flex-col justify-between">
               <div class="flex flex-col"><a
                   class="text-white text-center text-lg uppercase text-rubik py-2 font-medium border-t border-b border-white/15"
-                  href="#about">about</a><a
+                  href="/#about">about</a><a
                   class="text-white text-center text-lg uppercase text-rubik py-2 font-medium border-b border-white/15"
                   href="#tokenomics">tokenomics</a><a
                   class="text-white text-center text-lg uppercase text-rubik py-2 font-medium border-b border-white/15"
@@ -717,6 +723,32 @@
             // Open the content by animating the height
             animate(content, { height: `${content.scrollHeight}px` }, { duration: 0.3, easing: 'ease-in' });
             animate(icon, { rotate: '135deg' }, { duration: 0.2, easing: 'ease-out' });
+          }
+        });
+      });
+
+      // Scroll animation
+      //
+      // Select all anchor links that link to sections on the page
+      const scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+      console.log(scrollLinks)
+
+      scrollLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          // Prevent default anchor link behavior (jumping to the section)
+          event.preventDefault();
+
+          // Get the target section's ID
+          const targetId = link.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+
+          // Scroll smoothly to the target section
+          if (targetSection) {
+            animate(window, { scrollY: targetSection.offsetTop }, {
+              duration: 1, // You can adjust the duration
+              easing: 'ease-out'
+            });
           }
         });
       });
