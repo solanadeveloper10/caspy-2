@@ -325,35 +325,25 @@
       </div>
     </div>
     <style>
-      #how-to-buy {
-        position: relative;
-        top: 0;
-        left: 0;
+      #floating-ghost-wrapper {
+        height: 100%;
+        position: absolute;
+        top: 125px;
       }
 
-      #floating-ghost {
-        /* position: -webkit-sticky;
-        /* For Safari */
+      #floating-ghost-container {
         position: sticky;
-        /* position: absolute; */
-        /* position: relative; */
-        /* top: 0; */
-        z-index: 100;
-        /* pointer-events: none; */
-        transition: top 0.2s ease-out, position 0.2s ease-out;
-
-        width: 43.43%;
+        top: 0;
       }
     </style>
     <section id="how-to-buy">
-      <!-- <div
-        class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto hidden md:flex flex-col lg:flex-row mt-32 relative"> -->
       <div
-        class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto md:flex flex-col lg:flex-row mt-32 relative">
-        <!-- <div class="hidden lg:block absolute w-[43.43%] top-[4.56%] -left-[2.76%]" id="floating-ghost"> -->
-        <div id="floating-ghost">
-          <img alt="floating image" loading="lazy" width="834" height="632" decoding="async" data-nimg="1"
-            class="animate-bounce-x" style="color:transparent" srcset="image_54 1x, image_14 2x" src="image_14">
+        class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto hidden md:flex flex-col lg:flex-row mt-32 relative">
+        <div class="hidden lg:block absolute w-[43.43%] top-[4.56%] -left-[2.76%]" id="floating-ghost-wrapper">
+          <div id="floating-ghost-container">
+            <img alt="floating image" loading="lazy" width="834" height="632" decoding="async" data-nimg="1"
+              class="animate-bounce-x" style="color:transparent" srcset="image_54 1x, image_14 2x" src="image_14">
+          </div>
         </div>
         <div class="~text-[4rem]/[6rem] leading-[5rem] font-boldenVan lg:w-[46%]">How To Buy</div>
         <div class="grow mt-[2rem] lg:mt-[7rem] mx-auto">
@@ -447,268 +437,267 @@
           </div>
         </div>
       </div>
-      <div class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto md:hidden flex flex-col pt-[15%] gap-10">
-        <div class="~text-[3rem]/[5rem] leading-[5rem] font-boldenVan w-full">How To Buy</div>
-        <div class="flex flex-col ">
-          <div class="flex gap-3 ">
-            <div class="flex">
-              <div class="h-full border-l border-dashed border-accent"></div>
-              <div class="relative w-max h-max -ml-0.5">
-                <h4
-                  class="absolute top-0 left-0 translate-x-2 font-boldenVan text-md lg:~text-[0.5rem]/[2.2rem]  lg:~leading-[0.5rem]/[2.2rem]">
-                  0<!-- -->1</h4><img alt="roadmap-circle" loading="lazy" width="100" height="100" decoding="async"
-                  data-nimg="1" class="w-[2.7rem]" style="color:transparent" src="images/number.svg">
-              </div>
-            </div>
-            <div class="flex flex-col grow gap-3">
-              <h1 class="text-accent ~text-[1.5rem]/[2.5rem] leading-[1.6rem] font-boldenVan ">Create Wallet</h1>
-              <p class="w-full ~text-[1rem]/xl">Download Phantom or your wallet of choice from the app store or Google
-                Play for free. Desktop users, download the Google Chrome extension by searching for Phantom.</p><img
-                alt="how-to-buy-bg" loading="lazy" width="162" height="247" decoding="async" data-nimg="1"
-                class="w-[46.66%]" style="color:transparent" srcset="image_45 1x, image_19 2x" src="image_19">
-            </div>
+  </div>
+  <div class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto md:hidden flex flex-col pt-[15%] gap-10">
+    <div class="~text-[3rem]/[5rem] leading-[5rem] font-boldenVan w-full">How To Buy</div>
+    <div class="flex flex-col ">
+      <div class="flex gap-3 ">
+        <div class="flex">
+          <div class="h-full border-l border-dashed border-accent"></div>
+          <div class="relative w-max h-max -ml-0.5">
+            <h4
+              class="absolute top-0 left-0 translate-x-2 font-boldenVan text-md lg:~text-[0.5rem]/[2.2rem]  lg:~leading-[0.5rem]/[2.2rem]">
+              0<!-- -->1</h4><img alt="roadmap-circle" loading="lazy" width="100" height="100" decoding="async"
+              data-nimg="1" class="w-[2.7rem]" style="color:transparent" src="images/number.svg">
           </div>
-          <div class="h-[30px] border-l border-dashed border-accent w-0"></div>
-          <div class="flex gap-3 ">
-            <div class="flex">
-              <div class="h-full border-l border-dashed border-accent"></div>
-              <div class="relative w-max h-max -ml-0.5">
-                <h4
-                  class="absolute top-0 left-0 translate-x-2 font-boldenVan text-md lg:~text-[0.5rem]/[2.2rem]  lg:~leading-[0.5rem]/[2.2rem]">
-                  0<!-- -->2</h4><img alt="roadmap-circle" loading="lazy" width="100" height="100" decoding="async"
-                  data-nimg="1" class="w-[2.7rem]" style="color:transparent" src="images/number.svg">
-              </div>
-            </div>
-            <div class="flex flex-col grow gap-3">
-              <h1 class="text-accent ~text-[1.5rem]/[2.5rem] leading-[1.6rem] font-boldenVan ">Get some SOL</h1>
-              <p class="w-full ~text-[1rem]/xl">Have SOL in your wallet to switch to $SPOOKIE. If you don’t have any
-                SOL,
-                you can buy directly on Phantom, transfer from another wallet, or buy on another exchange and send it to
-                your wallet.</p><img alt="how-to-buy-bg" loading="lazy" width="162" height="247" decoding="async"
-                data-nimg="1" class="w-[46.66%]" style="color:transparent" srcset="image_36 1x, image_18 2x"
-                src="image_18">
-            </div>
+        </div>
+        <div class="flex flex-col grow gap-3">
+          <h1 class="text-accent ~text-[1.5rem]/[2.5rem] leading-[1.6rem] font-boldenVan ">Create Wallet</h1>
+          <p class="w-full ~text-[1rem]/xl">Download Phantom or your wallet of choice from the app store or Google
+            Play for free. Desktop users, download the Google Chrome extension by searching for Phantom.</p><img
+            alt="how-to-buy-bg" loading="lazy" width="162" height="247" decoding="async" data-nimg="1"
+            class="w-[46.66%]" style="color:transparent" srcset="image_45 1x, image_19 2x" src="image_19">
+        </div>
+      </div>
+      <div class="h-[30px] border-l border-dashed border-accent w-0"></div>
+      <div class="flex gap-3 ">
+        <div class="flex">
+          <div class="h-full border-l border-dashed border-accent"></div>
+          <div class="relative w-max h-max -ml-0.5">
+            <h4
+              class="absolute top-0 left-0 translate-x-2 font-boldenVan text-md lg:~text-[0.5rem]/[2.2rem]  lg:~leading-[0.5rem]/[2.2rem]">
+              0<!-- -->2</h4><img alt="roadmap-circle" loading="lazy" width="100" height="100" decoding="async"
+              data-nimg="1" class="w-[2.7rem]" style="color:transparent" src="images/number.svg">
           </div>
-          <div class="h-[30px] border-l border-dashed border-accent w-0"></div>
-          <div class="flex gap-3 ">
-            <div class="flex">
-              <div class="h-full border-l border-dashed border-accent"></div>
-              <div class="relative w-max h-max -ml-0.5">
-                <h4
-                  class="absolute top-0 left-0 translate-x-2 font-boldenVan text-md lg:~text-[0.5rem]/[2.2rem]  lg:~leading-[0.5rem]/[2.2rem]">
-                  0<!-- -->3</h4><img alt="roadmap-circle" loading="lazy" width="100" height="100" decoding="async"
-                  data-nimg="1" class="w-[2.7rem]" style="color:transparent" src="images/number.svg">
-              </div>
-            </div>
-            <div class="flex flex-col grow gap-3">
-              <h1 class="text-accent ~text-[1.5rem]/[2.5rem] leading-[1.6rem] font-boldenVan ">Go to Jupiter</h1>
-              <p class="w-full ~text-[1rem]/xl">Connect to Jupiter. Connect your wallet in chrome. Paste the $SPOOKIE
-                token address, select $SPOOKIE, and confirm. When Phantom prompts you for a wallet signature, sign.</p>
-              <img alt="how-to-buy-bg" loading="lazy" width="162" height="247" decoding="async" data-nimg="1"
-                class="w-[46.66%]" style="color:transparent" srcset="image_42 1x, image_21 2x" src="image_21">
-              <div class="bg-light-black rounded-lg px-3 py-3 sm:px-4 sm:py-3 flex gap-3 md:max-w-[381px]">
-                <div class="flex flex-col grow gap-2">
-                  <div class="relative max-w-[176px]"><img alt="sticker" loading="lazy" width="352" height="48"
-                      decoding="async" data-nimg="1" class="w-full" style="color:transparent"
-                      srcset="image_40 1x, image_16 2x" src="image_16">
-                    <h4
-                      class="text-accent font-boldenVan textlg lg:~text-[0.5rem]/[1.125rem] lg:~leading-[0.5rem]/[1.125rem] absolute top-0 translate-x-2 lg:translate-y-1">
-                      $SPOOKIE Address</h4>
-                  </div>
-                  <h1 class="break-all font-medium font-rubik">SpooKeK1bnxjWkwypHfLKcJfkgcCqse1D7xCAso1eZh</h1>
-                </div>
-                <div class=""><button
-                    class="flex items-center justify-center border-2 rounded-lg p-2 hover:bg-accent hover:border-accent transition-colors duration-200"><svg
-                      width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M2.33342 3.45375V12.5417C2.33328 13.4409 2.67516 14.3064 3.28972 14.9628C3.90428 15.6192 4.7455 16.0173 5.64275 16.0762L5.87508 16.0833H12.1282C11.9818 16.4976 11.7105 16.8563 11.3518 17.11C10.993 17.3637 10.5645 17.4999 10.1251 17.5H5.16675C4.03958 17.5 2.95857 17.0522 2.16154 16.2552C1.36451 15.4582 0.916748 14.3772 0.916748 13.25V5.45833C0.916518 5.0187 1.05265 4.58983 1.30637 4.2308C1.5601 3.87178 1.91893 3.60029 2.33342 3.45375ZM12.9584 0.5C13.522 0.5 14.0625 0.723883 14.461 1.1224C14.8595 1.52091 15.0834 2.06141 15.0834 2.625V12.5417C15.0834 13.1053 14.8595 13.6458 14.461 14.0443C14.0625 14.4428 13.522 14.6667 12.9584 14.6667H5.87508C5.3115 14.6667 4.77099 14.4428 4.37248 14.0443C3.97396 13.6458 3.75008 13.1053 3.75008 12.5417V2.625C3.75008 2.06141 3.97396 1.52091 4.37248 1.1224C4.77099 0.723883 5.3115 0.5 5.87508 0.5H12.9584Z"
-                        fill="white"></path>
-                    </svg></button></div>
-              </div>
-            </div>
+        </div>
+        <div class="flex flex-col grow gap-3">
+          <h1 class="text-accent ~text-[1.5rem]/[2.5rem] leading-[1.6rem] font-boldenVan ">Get some SOL</h1>
+          <p class="w-full ~text-[1rem]/xl">Have SOL in your wallet to switch to $SPOOKIE. If you don’t have any
+            SOL,
+            you can buy directly on Phantom, transfer from another wallet, or buy on another exchange and send it to
+            your wallet.</p><img alt="how-to-buy-bg" loading="lazy" width="162" height="247" decoding="async"
+            data-nimg="1" class="w-[46.66%]" style="color:transparent" srcset="image_36 1x, image_18 2x" src="image_18">
+        </div>
+      </div>
+      <div class="h-[30px] border-l border-dashed border-accent w-0"></div>
+      <div class="flex gap-3 ">
+        <div class="flex">
+          <div class="h-full border-l border-dashed border-accent"></div>
+          <div class="relative w-max h-max -ml-0.5">
+            <h4
+              class="absolute top-0 left-0 translate-x-2 font-boldenVan text-md lg:~text-[0.5rem]/[2.2rem]  lg:~leading-[0.5rem]/[2.2rem]">
+              0<!-- -->3</h4><img alt="roadmap-circle" loading="lazy" width="100" height="100" decoding="async"
+              data-nimg="1" class="w-[2.7rem]" style="color:transparent" src="images/number.svg">
           </div>
-          <div class="h-[30px] border-l border-dashed border-accent w-0"></div>
-          <div class="flex gap-3 ">
-            <div class="flex">
-              <div class="relative w-max h-max -ml-0.5">
+        </div>
+        <div class="flex flex-col grow gap-3">
+          <h1 class="text-accent ~text-[1.5rem]/[2.5rem] leading-[1.6rem] font-boldenVan ">Go to Jupiter</h1>
+          <p class="w-full ~text-[1rem]/xl">Connect to Jupiter. Connect your wallet in chrome. Paste the $SPOOKIE
+            token address, select $SPOOKIE, and confirm. When Phantom prompts you for a wallet signature, sign.</p>
+          <img alt="how-to-buy-bg" loading="lazy" width="162" height="247" decoding="async" data-nimg="1"
+            class="w-[46.66%]" style="color:transparent" srcset="image_42 1x, image_21 2x" src="image_21">
+          <div class="bg-light-black rounded-lg px-3 py-3 sm:px-4 sm:py-3 flex gap-3 md:max-w-[381px]">
+            <div class="flex flex-col grow gap-2">
+              <div class="relative max-w-[176px]"><img alt="sticker" loading="lazy" width="352" height="48"
+                  decoding="async" data-nimg="1" class="w-full" style="color:transparent"
+                  srcset="image_40 1x, image_16 2x" src="image_16">
                 <h4
-                  class="absolute top-0 left-0 translate-x-2 font-boldenVan text-md lg:~text-[0.5rem]/[2.2rem]  lg:~leading-[0.5rem]/[2.2rem]">
-                  0<!-- -->4</h4><img alt="roadmap-circle" loading="lazy" width="100" height="100" decoding="async"
-                  data-nimg="1" class="w-[2.7rem]" style="color:transparent" src="images/number.svg">
+                  class="text-accent font-boldenVan textlg lg:~text-[0.5rem]/[1.125rem] lg:~leading-[0.5rem]/[1.125rem] absolute top-0 translate-x-2 lg:translate-y-1">
+                  $SPOOKIE Address</h4>
               </div>
+              <h1 class="break-all font-medium font-rubik">SpooKeK1bnxjWkwypHfLKcJfkgcCqse1D7xCAso1eZh</h1>
             </div>
-            <div class="flex flex-col grow gap-3">
-              <h1 class="text-accent ~text-[1.5rem]/[2.5rem] leading-[1.6rem] font-boldenVan ">Swap for SPOOKIE</h1>
-              <p class="w-full ~text-[1rem]/xl">Switch SOL for $SPOOKIE. We have Zero taxes so you don’t need to worry
-                about buying with a specific slippage.</p><img alt="how-to-buy-bg" loading="lazy" width="162"
-                height="247" decoding="async" data-nimg="1" class="w-[46.66%]" style="color:transparent"
-                srcset="image_48 1x, image_20 2x" src="image_20">
-            </div>
+            <div class=""><button
+                class="flex items-center justify-center border-2 rounded-lg p-2 hover:bg-accent hover:border-accent transition-colors duration-200"><svg
+                  width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2.33342 3.45375V12.5417C2.33328 13.4409 2.67516 14.3064 3.28972 14.9628C3.90428 15.6192 4.7455 16.0173 5.64275 16.0762L5.87508 16.0833H12.1282C11.9818 16.4976 11.7105 16.8563 11.3518 17.11C10.993 17.3637 10.5645 17.4999 10.1251 17.5H5.16675C4.03958 17.5 2.95857 17.0522 2.16154 16.2552C1.36451 15.4582 0.916748 14.3772 0.916748 13.25V5.45833C0.916518 5.0187 1.05265 4.58983 1.30637 4.2308C1.5601 3.87178 1.91893 3.60029 2.33342 3.45375ZM12.9584 0.5C13.522 0.5 14.0625 0.723883 14.461 1.1224C14.8595 1.52091 15.0834 2.06141 15.0834 2.625V12.5417C15.0834 13.1053 14.8595 13.6458 14.461 14.0443C14.0625 14.4428 13.522 14.6667 12.9584 14.6667H5.87508C5.3115 14.6667 4.77099 14.4428 4.37248 14.0443C3.97396 13.6458 3.75008 13.1053 3.75008 12.5417V2.625C3.75008 2.06141 3.97396 1.52091 4.37248 1.1224C4.77099 0.723883 5.3115 0.5 5.87508 0.5H12.9584Z"
+                    fill="white"></path>
+                </svg></button></div>
           </div>
         </div>
       </div>
-    </section>
-    <div class="relative ~py-[5rem]/32" id="faq">
-      <div class="h-full w-full px-0 lg:px-8">
-        <div class="h-max relative"><img alt="tree" loading="lazy" width="874" height="1076" decoding="async"
-            data-nimg="1" class="absolute top-[8%] -right-0.5 md:hidden w-[32.53%]" style="color:transparent"
-            srcset="image_46 1x, image_23 2x" src="image_23">
-          <div
-            class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto relative py-6 lg:py-20 flex flex-col gap-4 z-10">
-            <h2 class="~text-[3rem]/[6.1rem] font-boldenVan">FAQ</h2>
-            <div class="w-[46.66%] ml-[3.46%] relative md:hidden"><img alt="ghost" loading="lazy" width="349"
-                height="376" decoding="async" data-nimg="1" class="" style="color:transparent"
-                srcset="image_47 1x, image_22 2x" src="image_22"><img alt="question" loading="lazy" width="180"
-                height="210" decoding="async" data-nimg="1" class="absolute w-[57%] -top-[54%] -right-[40%]"
-                style="color:transparent" srcset="image_50 1x, image_26 2x" src="image_26"></div>
-            <div class="w-full md:w-1/2">
-              <div
-                class="flex flex-col w-full px-1 pt-4 pb-3 first:border-t border-b border-dashed border-white accordion-item">
-                <button aria-controls="Who is SPOOKIE?" aria-expanded="false"
-                  class="flex items-center justify-between w-full text-left space-x-4 accordion-header">
-                  <div class="flex items-center  space-x-4">
-                    <div class="text-2xl accordion-header-icon">
-                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
-                        class="text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-                        </path>
-                      </svg>
-                    </div>
-                    <h3 class="text-xl font-boldenVan">Who is SPOOKIE?</h3>
-                  </div>
-                </button>
-                <div
-                  class="overflow-hidden mt-3 font-rubik text-white grid items-center grid-col-[20px_1fr] accordion-content"
-                  style="height:0px;margin-bottom:0px">
-                  <p class="text-black-400 pl-10">SPOOKIE is the balance bringer to society making sure chaos isn’t
-                    raised
-                    by the shitters invading the populous & successful city of UPTOWN</p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col w-full px-1 pt-4 pb-3 first:border-t border-b border-dashed border-white accordion-item">
-                <button aria-controls="What chain is $SPOOKIE on?" aria-expanded="false"
-                  class="flex items-center justify-between w-full text-left space-x-4 accordion-header">
-                  <div class="flex items-center  space-x-4">
-                    <div class="text-2xl accordion-header-icon" style="transform:none"><svg stroke="currentColor"
-                        fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-white" height="1em"
-                        width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-                        </path>
-                      </svg></div>
-                    <h3 class="text-xl font-boldenVan">What chain is $SPOOKIE on?</h3>
-                  </div>
-                </button>
-                <div
-                  class="overflow-hidden mt-3 font-rubik text-white grid items-center grid-col-[20px_1fr] accordion-content"
-                  style="height:0px;margin-bottom:0px">
-                  <p class="text-black-400 pl-10">SPOOKIE is on the Solana blockchain</p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col w-full px-1 pt-4 pb-3 first:border-t border-b border-dashed border-white accordion-item">
-                <button aria-controls="How do I buy $SPOOKIE?" aria-expanded="false"
-                  class="flex items-center justify-between w-full text-left space-x-4 accordion-header">
-                  <div class="flex items-center  space-x-4">
-                    <div class="text-2xl accordion-header-icon" style="transform:none"><svg stroke="currentColor"
-                        fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-white" height="1em"
-                        width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-                        </path>
-                      </svg></div>
-                    <h3 class="text-xl font-boldenVan">How do I buy $SPOOKIE?</h3>
-                  </div>
-                </button>
-                <div
-                  class="overflow-hidden mt-3 font-rubik text-white grid items-center grid-col-[20px_1fr] accordion-content"
-                  style="height:0px;margin-bottom:0px">
-                  <p class="text-black-400 pl-10">Please refer to our how to buy section</p>
-                </div>
-              </div>
-            </div>
+      <div class="h-[30px] border-l border-dashed border-accent w-0"></div>
+      <div class="flex gap-3 ">
+        <div class="flex">
+          <div class="relative w-max h-max -ml-0.5">
+            <h4
+              class="absolute top-0 left-0 translate-x-2 font-boldenVan text-md lg:~text-[0.5rem]/[2.2rem]  lg:~leading-[0.5rem]/[2.2rem]">
+              0<!-- -->4</h4><img alt="roadmap-circle" loading="lazy" width="100" height="100" decoding="async"
+              data-nimg="1" class="w-[2.7rem]" style="color:transparent" src="images/number.svg">
           </div>
         </div>
+        <div class="flex flex-col grow gap-3">
+          <h1 class="text-accent ~text-[1.5rem]/[2.5rem] leading-[1.6rem] font-boldenVan ">Swap for SPOOKIE</h1>
+          <p class="w-full ~text-[1rem]/xl">Switch SOL for $SPOOKIE. We have Zero taxes so you don’t need to worry
+            about buying with a specific slippage.</p><img alt="how-to-buy-bg" loading="lazy" width="162" height="247"
+            decoding="async" data-nimg="1" class="w-[46.66%]" style="color:transparent"
+            srcset="image_48 1x, image_20 2x" src="image_20">
+        </div>
       </div>
-      <div class="hidden md:block absolute top-0 right-0 w-[36.77%] max-w-[706px] pointer-events-none"><img
-          alt="pattern" loading="lazy" width="1412" height="1704" decoding="async" data-nimg="1" class=""
-          style="color:transparent" srcset="image_49 1x, image_24 2x" src="image_24"><img alt="faq" loading="lazy"
-          width="470" height="550" decoding="async" data-nimg="1"
-          class=" absolute top-[15.49%] left-[-20%] w-[30%] pointer-events-none animate-zoom" style="color:transparent"
-          srcset="image_44 1x, image_25 2x" src="image_25"></div>
     </div>
-    <div class="h-max relative">
-      <div class="relative flex flex-col gap-[4vw] md:gap-[2vw] md:aspect-[2.967] pt-[4%]"><img alt="background"
-          loading="lazy" width="3840" height="1294" decoding="async" data-nimg="1"
-          class="object-cover absolute top-0 w-full hidden md:block" style="color:transparent" srcset="image_29 1x"
-          src="image_29">
-        <h1
-          class="font-boldenVan hidden md:block mx-[5%] md:mx-0 text-accent ~text-[3rem]/[10rem] md:~text-[2.5rem]/[5rem] md:text-center z-10">
-          JOIN OUR COMMUNITY</h1>
-        <h1
-          class="md:hidden ~leading-[3.3rem]/[12rem] font-boldenVan ml-[5%] mr-[20%] text-accent ~text-[3rem]/[15rem] z-10">
-          JOIN OUR COMMUNITY</h1>
+  </div>
+  </section>
+  <div class="relative ~py-[5rem]/32" id="faq">
+    <div class="h-full w-full px-0 lg:px-8">
+      <div class="h-max relative"><img alt="tree" loading="lazy" width="874" height="1076" decoding="async"
+          data-nimg="1" class="absolute top-[8%] -right-0.5 md:hidden w-[32.53%]" style="color:transparent"
+          srcset="image_46 1x, image_23 2x" src="image_23">
         <div
-          class="flex flex-row justify-center items-center gap-3 md:gap-5 z-10 w-[90%] md:w-[35%] mx-[5%] md:mx-auto">
-          <a href="https://x.com/spookiesolana" target="_blank" rel="noopener noreferrer"
-            class="bg-white w-full hover:bg-accent duration-300 group transition-colors ease-out py-2.5 md:~py-1.5/2.5 ~px-2/5 md:~w-36/56 items-center justify-center rounded-full flex"><svg
-              stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
-              class="text-black group-hover:text-white ~w-6/7 ~h-8/10 md:~h-6/7 transition-colors ease-out duration-300"
-              height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M8 2H1L9.26086 13.0145L1.44995 21.9999H4.09998L10.4883 14.651L16 22H23L14.3917 10.5223L21.8001 2H19.1501L13.1643 8.88578L8 2ZM17 20L5 4H7L19 20H17Z">
-              </path>
-            </svg></a><a href="https://t.me/spookiesolana" target="_blank" rel="noopener noreferrer"
-            class="bg-white w-full hover:bg-accent duration-300 group transition-colors ease-out py-2.5 md:~py-1.5/2.5 ~px-2/5 md:~w-36/56 items-center justify-center rounded-full flex"><svg
-              stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
-              class="text-black group-hover:text-white ~w-6/7 ~h-8/10 md:~h-6/7 transition-colors ease-out duration-300"
-              height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z">
-              </path>
-            </svg></a><a
-            href="https://www.dextools.io/app/en/solana/pair-explorer/8kJUgmhyp3JxX6gzL25vvYKVCu7dhtMDFpULZtFgCB4?t=1730419465984"
-            target="_blank" rel="noopener noreferrer"
-            class="bg-white relative w-full group hover:bg-accent duration-300 group transition-colors ease-out py-2.5 md:~py-1.5/2.5 ~px-2/5 md:~w-36/56 items-center justify-center rounded-full flex"><img
-              alt="x" loading="lazy" width="22" height="22" decoding="async" data-nimg="1"
-              class="~w-6/7 ~h-8/10 md:~h-6/7 group-hover:opacity-100 opacity-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              style="color:transparent" src="images/dextool-white.9a403b85.svg"><img alt="x" loading="lazy" width="30"
-              height="30" decoding="async" data-nimg="1" class="~w-6/7 ~h-8/10 md:~h-6/7 group-hover:opacity-0"
-              style="color:transparent" src="images/token-black.dd7a0d22.svg"></a>
-        </div><img alt="ghost" loading="lazy" width="260" height="334" decoding="async" data-nimg="1"
-          class="absolute md:hidden -right-0.5 -top-[8%] w-[34.66%]" style="color:transparent"
-          srcset="image_32 1x, image_27 2x" src="image_27"><img alt="rip" loading="lazy" width="750" height="422"
-          decoding="async" data-nimg="1" class="object-cover w-full pt-[5%] md:hidden" style="color:transparent"
-          srcset="image_31 1x, image_28 2x" src="image_28">
+          class="px-4 lg:px-8 w-full h-full ~max-w-[62rem]/[92rem] mx-auto relative py-6 lg:py-20 flex flex-col gap-4 z-10">
+          <h2 class="~text-[3rem]/[6.1rem] font-boldenVan">FAQ</h2>
+          <div class="w-[46.66%] ml-[3.46%] relative md:hidden"><img alt="ghost" loading="lazy" width="349" height="376"
+              decoding="async" data-nimg="1" class="" style="color:transparent" srcset="image_47 1x, image_22 2x"
+              src="image_22"><img alt="question" loading="lazy" width="180" height="210" decoding="async" data-nimg="1"
+              class="absolute w-[57%] -top-[54%] -right-[40%]" style="color:transparent"
+              srcset="image_50 1x, image_26 2x" src="image_26"></div>
+          <div class="w-full md:w-1/2">
+            <div
+              class="flex flex-col w-full px-1 pt-4 pb-3 first:border-t border-b border-dashed border-white accordion-item">
+              <button aria-controls="Who is SPOOKIE?" aria-expanded="false"
+                class="flex items-center justify-between w-full text-left space-x-4 accordion-header">
+                <div class="flex items-center  space-x-4">
+                  <div class="text-2xl accordion-header-icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
+                      class="text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                      </path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-boldenVan">Who is SPOOKIE?</h3>
+                </div>
+              </button>
+              <div
+                class="overflow-hidden mt-3 font-rubik text-white grid items-center grid-col-[20px_1fr] accordion-content"
+                style="height:0px;margin-bottom:0px">
+                <p class="text-black-400 pl-10">SPOOKIE is the balance bringer to society making sure chaos isn’t
+                  raised
+                  by the shitters invading the populous & successful city of UPTOWN</p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col w-full px-1 pt-4 pb-3 first:border-t border-b border-dashed border-white accordion-item">
+              <button aria-controls="What chain is $SPOOKIE on?" aria-expanded="false"
+                class="flex items-center justify-between w-full text-left space-x-4 accordion-header">
+                <div class="flex items-center  space-x-4">
+                  <div class="text-2xl accordion-header-icon" style="transform:none"><svg stroke="currentColor"
+                      fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-white" height="1em"
+                      width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                      </path>
+                    </svg></div>
+                  <h3 class="text-xl font-boldenVan">What chain is $SPOOKIE on?</h3>
+                </div>
+              </button>
+              <div
+                class="overflow-hidden mt-3 font-rubik text-white grid items-center grid-col-[20px_1fr] accordion-content"
+                style="height:0px;margin-bottom:0px">
+                <p class="text-black-400 pl-10">SPOOKIE is on the Solana blockchain</p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col w-full px-1 pt-4 pb-3 first:border-t border-b border-dashed border-white accordion-item">
+              <button aria-controls="How do I buy $SPOOKIE?" aria-expanded="false"
+                class="flex items-center justify-between w-full text-left space-x-4 accordion-header">
+                <div class="flex items-center  space-x-4">
+                  <div class="text-2xl accordion-header-icon" style="transform:none"><svg stroke="currentColor"
+                      fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-white" height="1em"
+                      width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                      </path>
+                    </svg></div>
+                  <h3 class="text-xl font-boldenVan">How do I buy $SPOOKIE?</h3>
+                </div>
+              </button>
+              <div
+                class="overflow-hidden mt-3 font-rubik text-white grid items-center grid-col-[20px_1fr] accordion-content"
+                style="height:0px;margin-bottom:0px">
+                <p class="text-black-400 pl-10">Please refer to our how to buy section</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div><!--$!--><template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"></template><!--/$-->
-    <!-- start custom code for Caspy -->
-    <style>
-      body {
-        position: relative;
-        top: 0;
-        left: 0;
-      }
-
-      #custom-wrapper {
-        width: 50px;
-        height: 50px;
-        background-color: red;
-
-        cursor: pointer;
-
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        z-index: 15000;
-      }
-    </style>
-    <div id="custom-wrapper">
-
     </div>
-    <!-- end of custom code for Caspy -->
+    <div class="hidden md:block absolute top-0 right-0 w-[36.77%] max-w-[706px] pointer-events-none"><img alt="pattern"
+        loading="lazy" width="1412" height="1704" decoding="async" data-nimg="1" class="" style="color:transparent"
+        srcset="image_49 1x, image_24 2x" src="image_24"><img alt="faq" loading="lazy" width="470" height="550"
+        decoding="async" data-nimg="1"
+        class=" absolute top-[15.49%] left-[-20%] w-[30%] pointer-events-none animate-zoom" style="color:transparent"
+        srcset="image_44 1x, image_25 2x" src="image_25"></div>
+  </div>
+  <div class="h-max relative">
+    <div class="relative flex flex-col gap-[4vw] md:gap-[2vw] md:aspect-[2.967] pt-[4%]"><img alt="background"
+        loading="lazy" width="3840" height="1294" decoding="async" data-nimg="1"
+        class="object-cover absolute top-0 w-full hidden md:block" style="color:transparent" srcset="image_29 1x"
+        src="image_29">
+      <h1
+        class="font-boldenVan hidden md:block mx-[5%] md:mx-0 text-accent ~text-[3rem]/[10rem] md:~text-[2.5rem]/[5rem] md:text-center z-10">
+        JOIN OUR COMMUNITY</h1>
+      <h1
+        class="md:hidden ~leading-[3.3rem]/[12rem] font-boldenVan ml-[5%] mr-[20%] text-accent ~text-[3rem]/[15rem] z-10">
+        JOIN OUR COMMUNITY</h1>
+      <div class="flex flex-row justify-center items-center gap-3 md:gap-5 z-10 w-[90%] md:w-[35%] mx-[5%] md:mx-auto">
+        <a href="https://x.com/spookiesolana" target="_blank" rel="noopener noreferrer"
+          class="bg-white w-full hover:bg-accent duration-300 group transition-colors ease-out py-2.5 md:~py-1.5/2.5 ~px-2/5 md:~w-36/56 items-center justify-center rounded-full flex"><svg
+            stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+            class="text-black group-hover:text-white ~w-6/7 ~h-8/10 md:~h-6/7 transition-colors ease-out duration-300"
+            height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8 2H1L9.26086 13.0145L1.44995 21.9999H4.09998L10.4883 14.651L16 22H23L14.3917 10.5223L21.8001 2H19.1501L13.1643 8.88578L8 2ZM17 20L5 4H7L19 20H17Z">
+            </path>
+          </svg></a><a href="https://t.me/spookiesolana" target="_blank" rel="noopener noreferrer"
+          class="bg-white w-full hover:bg-accent duration-300 group transition-colors ease-out py-2.5 md:~py-1.5/2.5 ~px-2/5 md:~w-36/56 items-center justify-center rounded-full flex"><svg
+            stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
+            class="text-black group-hover:text-white ~w-6/7 ~h-8/10 md:~h-6/7 transition-colors ease-out duration-300"
+            height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z">
+            </path>
+          </svg></a><a
+          href="https://www.dextools.io/app/en/solana/pair-explorer/8kJUgmhyp3JxX6gzL25vvYKVCu7dhtMDFpULZtFgCB4?t=1730419465984"
+          target="_blank" rel="noopener noreferrer"
+          class="bg-white relative w-full group hover:bg-accent duration-300 group transition-colors ease-out py-2.5 md:~py-1.5/2.5 ~px-2/5 md:~w-36/56 items-center justify-center rounded-full flex"><img
+            alt="x" loading="lazy" width="22" height="22" decoding="async" data-nimg="1"
+            class="~w-6/7 ~h-8/10 md:~h-6/7 group-hover:opacity-100 opacity-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            style="color:transparent" src="images/dextool-white.9a403b85.svg"><img alt="x" loading="lazy" width="30"
+            height="30" decoding="async" data-nimg="1" class="~w-6/7 ~h-8/10 md:~h-6/7 group-hover:opacity-0"
+            style="color:transparent" src="images/token-black.dd7a0d22.svg"></a>
+      </div><img alt="ghost" loading="lazy" width="260" height="334" decoding="async" data-nimg="1"
+        class="absolute md:hidden -right-0.5 -top-[8%] w-[34.66%]" style="color:transparent"
+        srcset="image_32 1x, image_27 2x" src="image_27"><img alt="rip" loading="lazy" width="750" height="422"
+        decoding="async" data-nimg="1" class="object-cover w-full pt-[5%] md:hidden" style="color:transparent"
+        srcset="image_31 1x, image_28 2x" src="image_28">
+    </div>
+  </div><!--$!--><template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"></template><!--/$-->
+  <!-- start custom code for Caspy -->
+  <style>
+    body {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    #custom-wrapper {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+
+      cursor: pointer;
+
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      z-index: 15000;
+    }
+  </style>
+  <div id="custom-wrapper">
+
+  </div>
+  <!-- end of custom code for Caspy -->
   </div>
   <script src="js/webpack-fc8a895f6b1cdb06.js" async=""></script>
   <!-- <script>(self.__next_f = self.__next_f || []).push([0]); self.__next_f.push([2, null])</script>
@@ -767,30 +756,6 @@
 
       // Scroll animation
       //
-
-      // Fixed Ghost image on How to buy section
-      // it needs to be fixed (works 50/50)
-      const fixedElement = document.getElementById('floating-ghost');
-      const section = document.getElementById('how-to-buy');
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-
-      window.addEventListener('scroll', () => {
-        const sectionRect = section.getBoundingClientRect();
-        const sectionTop = sectionRect.top;
-
-        // Adjust the position of the fixed element relative to the section
-        if (sectionTop <= 0 && sectionTop > -sectionRect.height) {
-          fixedElement.style.position = 'fixed';
-          fixedElement.style.top = '0';
-        } else if (sectionTop <= -sectionRect.height) {
-          fixedElement.style.position = 'absolute';
-          fixedElement.style.top = `${sectionRect.height}px`;
-        } else {
-          fixedElement.style.position = 'absolute';
-          fixedElement.style.top = '20px'; // Adjust initial position as per needs
-        }
-      });
     };
 
   </script>
