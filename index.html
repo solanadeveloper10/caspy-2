@@ -731,6 +731,14 @@
         animate(mobileNav, { x: '100vw' }, { duration: 0.3, easing: 'ease-in' });
       });
 
+      // Close the menu when a link is clicked
+      mobileNav.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') { // Check if the clicked element is a link
+          // Animate the mobile navigation out of view
+          animate(mobileNav, { x: '100vw' }, { duration: 0.3, easing: 'ease-in' });
+        }
+      });
+
 
       // FAQ Accordions logic
       // 
