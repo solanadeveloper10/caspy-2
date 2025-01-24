@@ -38,12 +38,30 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .comics-text {
+      text-align: justify;
+
+
+      border-radius: 50px;
+    }
+
+    .comics-text-wrapper {
+      border-radius: 25px;
+
+      padding-left: unset;
+      padding-right: unset;
+      padding-top: unset;
+      padding-bottom: unset;
+
+      padding: 20px 30px;
+    }
   </style>
 
   <header class="py-3 absolute z-30 right-0">
     <div class="px-4 lg:px-8 h-full w-full flex items-center justify-between">
       <div class=" hidden gap-6 lg:flex item-center">
-        <nav class="flex items-center gap-3 text-black"><a
+        <nav class="flex items-center gap-3 text-black comic-neue-bold"><a
             class="relative rounded-full bg-white hover:bg-accent duration-300 transition-colors ease-out group ~py-1.5/2 ~px-4/5 h-fit w-fit uppercase ~text-sm/base"
             href="/#about">About</a><a
             class="relative rounded-full bg-white hover:bg-accent duration-300 transition-colors ease-out group ~py-1.5/2 ~px-4/5 h-fit w-fit uppercase ~text-sm/base"
@@ -87,7 +105,7 @@
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg></button>
         <div>
-          <nav id="mobileNav" class="fixed z-50 right-0 top-0 flex h-screen w-3/4 flex-col bg-accent"
+          <nav id="mobileNav" class="fixed z-50 right-0 top-0 flex h-screen w-3/4 flex-col bg-accent comic-neue-bold"
             style="transform: translateX(100vw)">
             <div class="flex items-center justify-between p-6">
               <button id="mobileNavBtnClose" class="block ml-auto text-3xl p-3 rounded-full bg-accent"><svg
@@ -161,8 +179,9 @@
               decoding="async" data-nimg="1" class="w-full" style="color:transparent" srcset="image_53 1x, image_5 2x"
               src="image_5" />
             <div class="max-w-[355px] max-h-[224px] absolute top-[23.63%] left-[13.02%] text-lg">
-              <div class="py-3 px-5 rounded-lg bg-white text-black">
-                <p class="text-base !leading-[1.4] md:~text-xs/lg font-rubik font-medium">In the elite city of UPTOWN,
+              <div class="py-3 px-5 rounded-lg bg-white text-black comics-text-wrapper">
+                <p class="text-base !leading-[1.4] md:~text-xs/lg font-rubik font-medium comic-neue-bold comics-text">
+                  In the elite city of UPTOWN,
                   chaos erupts as low-quality projects flood the streets in an attempt to tarnish Solana's prestige.
                   Enter
                   CASPY, leader of RUG BUSTER INC., on a mission to clean up the mess.</p>
@@ -173,8 +192,9 @@
             </div>
             <div
               class="max-w-[342px] max-h-[324px] absolute top-[40%] lg:top-[57.71%] left-[60%] lg:left-[69.06%] text-lg">
-              <div class="py-3 px-5 rounded-lg bg-white text-black">
-                <p class="text-base !leading-[1.4] md:~text-xs/lg font-rubik font-medium">With his fearless team,
+              <div class="py-3 px-5 rounded-lg bg-white text-black comics-text-wrapper">
+                <p class="text-base !leading-[1.4] md:~text-xs/lg font-rubik font-medium comic-neue-bold comics-text">
+                  With his fearless team,
                   CASPY
                   sweeps the streets, sending bad projects to the RUGYARD or back to the dark corners of RUGSTREET in
                   DOWNTOWN. His heroic efforts restore peace, and UPTOWN rewards CASPY by making him a core member,
@@ -191,8 +211,9 @@
               decoding="async" data-nimg="1" class="absolute bottom-0" style="color:transparent"
               srcset="image_52 1x, image_4 2x" src="image_4" />
             <div class="max-w-[345px] max-h-[224px] absolute top-[1.72%] left-[4%] text-lg">
-              <div class="py-3 px-5 rounded-lg bg-white text-black">
-                <p class="text-base !leading-[1.4] md:~text-xs/lg font-rubik font-medium">In the elite city of UPTOWN,
+              <div class="py-3 px-5 rounded-lg bg-white text-black comics-text-wrapper">
+                <p class="text-base !leading-[1.4] md:~text-xs/lg font-rubik font-medium comic-neue-bold comics-text">
+                  In the elite city of UPTOWN,
                   chaos erupts as low-quality projects flood the streets in an attempt to tarnish Solana's prestige.
                   Enter
                   CASPY, leader of RUG BUSTER INC., on a mission to clean up the mess.</p>
@@ -202,8 +223,9 @@
               </div>
             </div>
             <div class="max-w-[249px] absolute top-[30.28%] right-[4%] text-lg">
-              <div class="py-3 px-5 rounded-lg bg-white text-black">
-                <p class="text-base !leading-[1.4] md:~text-xs/lg font-rubik font-medium">With his fearless team,
+              <div class="py-3 px-5 rounded-lg bg-white text-black comics-text-wrapper">
+                <p class="text-base !leading-[1.4] md:~text-xs/lg font-rubik font-medium comic-neue-bold comics-text">
+                  With his fearless team,
                   CASPY
                   sweeps the streets, sending bad projects to the RUGYARD or back to the dark corners of RUGSTREET in
                   DOWNTOWN. His heroic efforts restore peace, and UPTOWN rewards CASPY by making him a core member,
@@ -708,22 +730,22 @@
 
       @keyframes floatText {
         0% {
-          transform: translateY(-15px);
+          transform: translateY(-15px) scaleX(0.8);
         }
 
         50% {
-          transform: translateY(0);
+          transform: translateY(0) scaleX(0.8);
         }
 
         100% {
-          transform: translateY(-15px);
+          transform: translateY(-15px) scaleX(0.8);
         }
       }
 
       #chat-button-container {
         position: fixed;
         bottom: 15px;
-        right: 25px;
+        right: -28px;
         z-index: 15000;
 
         display: flex;
@@ -736,7 +758,7 @@
         text-transform: uppercase;
 
         font-weight: 600;
-        font-size: 20px;
+        font-size: 16px;
         color: rgb(255, 255, 255);
         text-shadow:
           0 0 5px #00ffcc,
@@ -752,7 +774,7 @@
 
         position: relative;
         top: 0;
-        left: -20px;
+        left: -40px;
       }
 
       #chat-button {
@@ -771,7 +793,7 @@
       }
     </style>
     <div id="chat-button-container">
-      <span id="chat-button-text">Chat with me</span>
+      <span id="chat-button-text" class="press-start-2p-regular">Chat with me</span>
       <button id="chat-button"></button>
     </div>
     <!-- end of custom code for Caspy -->
