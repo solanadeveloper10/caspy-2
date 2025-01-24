@@ -692,25 +692,91 @@
         left: 0;
       }
 
-      #custom-wrapper {
-        width: 50px;
-        height: 50px;
-        background-color: red;
+      @keyframes floatGhost {
+        0% {
+          transform: translateY(0%);
+        }
+
+        50% {
+          transform: translateY(-15%);
+        }
+
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      @keyframes floatText {
+        0% {
+          transform: translateY(-15px);
+        }
+
+        50% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(-15px);
+        }
+      }
+
+      #chat-button-container {
+        position: fixed;
+        bottom: 15px;
+        right: 25px;
+        z-index: 15000;
+
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      #chat-button-text {
+        display: block;
+        text-transform: uppercase;
+
+        font-weight: 600;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        text-shadow:
+          0 0 5px #00ffcc,
+          /* Inner glow */
+          0 0 10px #00ffcc,
+          0 0 20px #00ffcc,
+          0 0 40px #00ffaa,
+          /* Outer glow */
+          0 0 80px #00ffaa,
+          0 0 100px #00ffaa;
+
+        animation: floatText 2s infinite linear;
+
+        position: relative;
+        top: 0;
+        left: -20px;
+      }
+
+      #chat-button {
+        display: block;
+
+        width: 125px;
+        height: 99px;
+
+        background-image: url('./ghost-coin.png');
+        background-repeat: no-repeat;
+        background-size: contain;
 
         cursor: pointer;
 
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        z-index: 15000;
+        animation: floatGhost 2s infinite linear;
       }
     </style>
-    <div id="custom-wrapper">
-
+    <div id="chat-button-container">
+      <span id="chat-button-text">Chat with me</span>
+      <button id="chat-button"></button>
     </div>
     <!-- end of custom code for Caspy -->
   </div>
-  <script src="js/webpack-fc8a895f6b1cdb06.js" async=""></script>
+  <!-- <script src="js/webpack-fc8a895f6b1cdb06.js" async=""></script> -->
   <!-- <script>(self.__next_f = self.__next_f || []).push([0]); self.__next_f.push([2, null])</script>
   <script>self.__next_f.push([1, "1:HL[\"/_next/static/media/8177c8916f680b53-s.p.ttf\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/ttf\"}]\n2:HL[\"/_next/static/media/c22ccc5eb58b83e1-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n3:HL[\"/_next/static/css/c9229cb0be3976ce.css\",\"style\"]\n"])</script>
   <script>self.__next_f.push([1, "4:I[5751,[],\"\"]\n6:I[6513,[],\"ClientPageRoot\"]\n7:I[7274,[\"522\",\"static/chunks/94730671-c82a95a2a977cb7f.js\",\"675\",\"static/chunks/b563f954-cae43c893347fbc9.js\",\"956\",\"static/chunks/ee560e2c-187b6180bbd5d9ec.js\",\"699\",\"static/chunks/8e1d74a4-302cadf55a68210c.js\",\"922\",\"static/chunks/c15bf2b0-c5f2ab0c4ce668d5.js\",\"673\",\"static/chunks/673-b886edd5ad5b37ed.js\",\"931\",\"static/chunks/app/page-7ffc24ceabd581c6.js\"],\"default\"]\n8:I[9275,[],\"\"]\n9:I[1343,[],\"\"]\na:I[1164,[\"185\",\"static/chunks/app/layout-937fd29a0c05c0d5.js\"],\"Analytics\"]\nb:I[7240,[\"185\",\"static/chunks/app/layout-937fd29a0c05c0d5.js\"],\"SpeedInsights\"]\nd:I[6130,[],\"\"]\ne:[]\n"])</script>
@@ -787,8 +853,7 @@
         }
       }, 1);
 
-      console.log(heroBg)
-
+      // 
     };
 
   </script>
