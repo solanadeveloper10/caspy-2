@@ -30,7 +30,7 @@
   <meta name="description"
     content="$SPOOKIE is the cutest little ghost on a mission to explore the entire Solana blockchain!">
   <meta name="next-size-adjust">
-  <script src="js/polyfills-78c92fac7aa8fdd8.js" nomodule=""></script>
+  <!-- <script src="js/polyfills-78c92fac7aa8fdd8.js" nomodule=""></script> -->
 </head>
 
 <body class="__variable_b1bcfb __variable_80e019">
@@ -140,14 +140,16 @@
   <div class="scroll-container">
 
     <div id="wrapper">
-      <section class="relative sm:aspect-[1.34] aspect-[0.634] flex flex-col"><img alt="backgound" fetchpriority="high"
-          width="1920" height="1424" decoding="async" data-nimg="1"
+      <section class="relative sm:aspect-[1.34] aspect-[0.634] flex flex-col">
+        <img alt="backgound" id="hero-bg" fetchpriority="high" width="1920" height="1424" decoding="async" data-nimg="1"
           class="hidden sm:block object-center w-full absolute top-0 left-0 object-cover pointer-events-none"
-          style="color:transparent" srcset="image_39 1x, image_2 2x" src="image_2"><img alt="background" loading="lazy"
-          width="750" height="1182" decoding="async" data-nimg="1" class="absolute top-0 sm:hidden"
-          style="color:transparent" srcset="image_38 1x, image_1 2x" src="image_1"><img alt="logo" loading="lazy"
-          width="866" height="278" decoding="async" data-nimg="1" class="absolute top-0 left-0 w-[45.10%]"
-          style="color:transparent" srcset="image_35 1x, image 2x" src="image" />
+          style="color:transparent" srcset="image_39.jpg 1x, image_2.jpg 2x" src="image_2.jpg">
+        <img alt="background" id="hero-bg-mobile" loading="lazy" width="750" height="1182" decoding="async"
+          data-nimg="1" class="absolute top-0 sm:hidden" style="color:transparent"
+          srcset="image_38.jpg 1x, image_1.jpg 2x" src="image_1.jpg">
+        <img alt="logo" loading="lazy" width="866" height="278" decoding="async" data-nimg="1"
+          class="absolute top-0 left-0 w-[45.10%]" style="color:transparent" srcset="image_35.jpg 1x, image.jpg 2x"
+          src="image.jpg" />
         <div class="absolute left-0 top-[14%] sm:top-[20%] w-[88.26%] sm:w-[46.19%]">
           <img alt="subtitle vector" loading="lazy" width="887" height="75" decoding="async" data-nimg="1" class=""
             style="color:transparent" src="images/vector.7f84db5b.svg" />
@@ -772,76 +774,21 @@
         });
       });
 
-      // Scroll animation
-      //
-      var html = document.documentElement;
-      var body = document.body;
+      // Hero bg animation
+      const heroBg = document.getElementById('hero-bg');
 
-      var scroller = {
-        target: document.querySelector("#scroll-container"),
-        ease: 0.05, // <= scroll speed
-        endY: 0,
-        y: 0,
-        resizeRequest: 1,
-        scrollRequest: 0,
-      };
-
-      var requestId = null;
-
-      TweenLite.set(scroller.target, {
-        rotation: 0.01,
-        force3D: true
-      });
-
-      window.addEventListener("load", onLoad);
-
-      function onLoad() {
-        updateScroller();
-        window.focus();
-        window.addEventListener("resize", onResize);
-        document.addEventListener("scroll", onScroll);
-      }
-
-      function updateScroller() {
-
-        var resized = scroller.resizeRequest > 0;
-
-        if (resized) {
-          var height = scroller.target.clientHeight;
-          body.style.height = height + "px";
-          scroller.resizeRequest = 0;
+      setInterval(() => {
+        if (heroBg.getAttribute('src') == "image_2.jpg" && heroBg.getAttribute('srcset') == "image_39.jpg 1x, image_2.jpg 2x") {
+          heroBg.setAttribute('src', "background-variant.webp");
+          heroBg.setAttribute('srcset', "background-variant.webp 1x, background-variant.webp 2x");
+        } else {
+          heroBg.setAttribute('src', "image_2.jpg");
+          heroBg.setAttribute('srcset', "image_39.jpg 1x, image_2.jpg 2x");
         }
+      }, 1);
 
-        var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
+      console.log(heroBg)
 
-        scroller.endY = scrollY;
-        scroller.y += (scrollY - scroller.y) * scroller.ease;
-
-        if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
-          scroller.y = scrollY;
-          scroller.scrollRequest = 0;
-        }
-
-        TweenLite.set(scroller.target, {
-          y: -scroller.y
-        });
-
-        requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
-      }
-
-      function onScroll() {
-        scroller.scrollRequest++;
-        if (!requestId) {
-          requestId = requestAnimationFrame(updateScroller);
-        }
-      }
-
-      function onResize() {
-        scroller.resizeRequest++;
-        if (!requestId) {
-          requestId = requestAnimationFrame(updateScroller);
-        }
-      }
     };
 
   </script>
