@@ -777,7 +777,7 @@
         left: -40px;
       }
 
-      #chat-button {
+      #openModalBtn {
         display: block;
 
         width: 125px;
@@ -791,12 +791,180 @@
 
         animation: floatGhost 2s infinite linear;
       }
+
+      /* The Modal */
+      .modal {
+        display: none;
+        /* Hidden by default */
+        justify-content: center;
+        align-items: center;
+
+        position: fixed;
+        z-index: 20000;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+
+        pointer-events: none;
+
+        /* Disable interaction with anything outside the modal *
+      }
+
+      /* Modal Content */
+        .modal-content {
+          background-color: #fff;
+          margin: 15% auto;
+          padding: 20px 30px 20px;
+          border: 1px solid #888;
+          width: 80%;
+          max-width: 700px;
+          pointer-events: auto;
+          /* Enable interaction with the modal content */
+
+          border-radius: 25px;
+        }
+
+        /* The Close Button */
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .modalTitle {
+          font-weight: 700;
+          text-transform: uppercase;
+
+          font-size: 1.2rem;
+        }
     </style>
     <div id="chat-button-container">
       <span id="chat-button-text" class="press-start-2p-regular">Chat with me</span>
-      <button id="chat-button"></button>
+      <button id="openModalBtn"></button>
     </div>
-    <!-- end of custom code for Caspy -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="chatHeader">
+          <h3 class="modalTitle">Chat with Caspy</h3>
+          <span id="closeModalBtn" class="close">&times;</span>
+        </div>
+        <div id="chatHistoryContainer">
+          <style>
+            .chatHeader {
+              display: flex;
+              gap: 12px;
+              justify-content: space-between;
+              align-items: center;
+
+              width: 100%;
+              color: black;
+            }
+
+            #chatHistoryContainer {
+              /* border: solid 3px rgb(209, 30, 30); */
+              box-sizing: border-box;
+              width: 100%;
+              height: 100%;
+              padding: 10px;
+              position: relative;
+
+              display: flex;
+              flex-direction: column;
+            }
+
+            .user-message {
+              max-width: 90%;
+              width: fit-content;
+              margin: 10px 0 10px auto;
+              padding: 3px 10px;
+
+              border-radius: 0.5rem;
+              border: 2px solid black;
+              color: black;
+            }
+
+            .bot-message {
+              max-width: 90%;
+              width: fit-content;
+              margin: 10px auto 10px 0;
+              padding: 3px 10px;
+
+              border-radius: 0.5rem;
+              border: 2px solid black;
+              color: black;
+            }
+
+            #user-input {
+              border-radius: 16px;
+              background-color: #ffffff;
+              border: 2px solid black;
+              color: black;
+              font-size: 1rem;
+              /* font-family: "Potato Sans", sans-serif; */
+              padding: 5px 10px;
+              text-align: left !important;
+
+              flex: 1 1 auto;
+
+              @media (max-width: 760px) {
+                font-size: 1rem;
+              }
+
+              @media (max-width: 430px) {
+                font-size: unset;
+              }
+            }
+
+            #send-button {
+              font-size: 1rem;
+              /* font-family: "Potato Sans", sans-serif; */
+              cursor: pointer;
+              padding: 5px 20px;
+              border-radius: 16px;
+              border: 2px solid black;
+              color: black;
+
+              flex: 0 0 auto;
+            }
+
+            .inputs-container {
+              padding: 10px 0 5px;
+
+              display: flex;
+              gap: 5px;
+
+              @media (max-width: 430px) {
+                flex-direction: column;
+                align-items: stretch;
+              }
+            }
+          </style>
+          <div class="css-trexgg" id="chat-history"></div>
+          <div class="inputs-container">
+            <input type="text" id="user-input" placeholder="Say HI to Caspy...">
+            <button id="send-button">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of custom code for Caspy -->
   </div>
   <!-- <script src="js/webpack-fc8a895f6b1cdb06.js" async=""></script> -->
   <!-- <script>(self.__next_f = self.__next_f || []).push([0]); self.__next_f.push([2, null])</script>
@@ -875,9 +1043,118 @@
         }
       }, 1);
 
-      // 
-    };
+      // Modal logic
+      // Get the modal and buttons
+      const modal = document.getElementById("modal");
+      const openModalBtn = document.getElementById("openModalBtn");
+      const closeModalBtn = document.getElementById("closeModalBtn");
 
+      // When the user clicks the button, open the modal
+      openModalBtn.onclick = function () {
+        modal.style.display = "flex";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      closeModalBtn.onclick = function () {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+    }
+  </script>
+  <!-- chatgpt script -->
+  <script>
+    const chatHistory = JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+
+    function updateChatHistory() {
+      const chatHistoryDiv = document.getElementById('chat-history');
+      chatHistoryDiv.innerHTML = chatHistory.map(msg => msg).join('');
+      chatHistoryDiv.scrollTop = chatHistoryDiv.scrollHeight;
+    }
+
+    function addMessageToChat(message, isUser) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = isUser ? 'user-message' : 'bot-message';
+      if (!isUser) {
+        messageDiv.innerHTML = `<div class="bot-avatar"></div> <span>${message}</span>`;
+      } else {
+        messageDiv.innerHTML = `<span>${message}</span>`;
+      }
+
+      chatHistory.push(messageDiv.outerHTML);
+      updateChatHistory();
+
+      messageDiv.style.opacity = 0;
+      setTimeout(() => {
+        messageDiv.style.opacity = 1;
+      }, 0);
+    }
+
+    document.getElementById('send-button').addEventListener('click', sendMessage);
+    document.getElementById('user-input').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    async function sendMessage() {
+      const sendButton = document.getElementById('send-button');
+
+      if (sendButton.disabled) return
+
+      const userInput = document.getElementById('user-input').value;
+      if (!userInput) return;
+
+      addMessageToChat(userInput, true);
+      sessionStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+      document.getElementById('user-input').value = '';
+
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'bot-message';
+      typingIndicator.innerHTML = `<div class="bot-avatar"></div> <span>Caspy is typing...</span>`;
+      chatHistory.push(typingIndicator.outerHTML);
+      updateChatHistory();
+
+      // Блокируем кнопку отправки
+      sendButton.disabled = true;
+      const backendUrl = 'https://daq-backend.onrender.com/chat';
+      const fetchPromise = fetch(backendUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ messages: chatHistory.slice(-10) })
+      });
+
+      // Таймер на 5 секунд
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Server error')), 5000)
+      );
+
+      try {
+        const response = await Promise.race([fetchPromise, timeoutPromise]);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        chatHistory.pop();
+        addMessageToChat(`${data.reply}`, false);
+      } catch (error) {
+        chatHistory.pop();
+        addMessageToChat(`Error: ${error.message || 'request error'}`, false);
+      } finally {
+        updateChatHistory();
+        sessionStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        // Разблокируем кнопку отправки
+        sendButton.disabled = false;
+      }
+    }
+    updateChatHistory();
   </script>
 </body>
 
