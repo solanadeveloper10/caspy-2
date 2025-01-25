@@ -813,46 +813,86 @@
         background-color: rgba(0, 0, 0, 0.4);
         /* Black w/ opacity */
 
+        overflow: hidden;
         pointer-events: none;
 
-        /* Disable interaction with anything outside the modal *
+        opacity: 0;
+        /* Initially invisible */
+        transition: opacity 0.3s ease;
+        /* Smooth transition for fading in/out */
       }
 
       /* Modal Content */
-        .modal-content {
-          background-color: #fff;
-          margin: 15% auto;
-          padding: 20px 30px 20px;
-          border: 1px solid #888;
-          width: 80%;
-          max-width: 500px;
-          pointer-events: auto;
-          /* Enable interaction with the modal content */
+      .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px 30px 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 35vw;
+        height: 35vw;
+        pointer-events: auto;
+        /* Enable interaction with the modal content */
 
-          border-radius: 25px;
+        border-radius: 25px;
+
+        @media (max-width: 767.98px) {
+          border-radius: unset;
+          max-width: unset;
+          width: 100vw;
+          height: 100vh;
         }
 
-        /* The Close Button */
-        .close {
-          color: #aaa;
-          float: right;
-          font-size: 28px;
-          font-weight: bold;
-        }
+        transform: translate(100%, 100%);
+        /* Initially off-screen at the bottom-right */
+        transition: transform 0.3s ease,
+        opacity 0.3s ease;
+        /* Smooth transition for sliding and fading */
+        opacity: 0;
+        /* Initially invisible */
+        /* Optional rounded corners */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      }
 
-        .close:hover,
-        .close:focus {
-          color: black;
-          text-decoration: none;
-          cursor: pointer;
-        }
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
 
-        .modalTitle {
-          font-weight: 700;
-          text-transform: uppercase;
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
 
-          font-size: 1.2rem;
-        }
+      .modalTitle {
+        font-weight: 700;
+        text-transform: uppercase;
+
+        font-size: 1.2rem;
+      }
+
+
+      /* When modal is shown, apply visibility and animation */
+      .modal.show {
+        display: block;
+        /* Make the modal visible */
+        opacity: 1;
+        /* Fade in */
+        pointer-events: auto;
+        /* Allow interaction */
+      }
+
+      .modal-content.show {
+        opacity: 1;
+        /* Fade in content */
+        transform: translate(0, 0);
+        /* Slide into view from the bottom-right */
+      }
     </style>
     <div id="chat-button-container">
       <span id="chat-button-text" class="press-start-2p-regular">Chat with me</span>
@@ -886,6 +926,14 @@
 
               display: flex;
               flex-direction: column;
+
+              overflow: hidden;
+            }
+
+            #chat-history {
+              overflow-y: auto;
+
+              height: 80%;
             }
 
             .user-message {
@@ -955,9 +1003,9 @@
               }
             }
           </style>
-          <div class="css-trexgg" id="chat-history"></div>
+          <div id="chat-history"></div>
           <div class="inputs-container">
-            <input type="text" id="user-input" placeholder="Say HI to Caspy...">
+            <input type="text" id="user-input" placeholder="Say Hi to Caspy...">
             <button id="send-button">Send</button>
           </div>
         </div>
@@ -1046,25 +1094,43 @@
       // Modal logic
       // Get the modal and buttons
       const modal = document.getElementById("modal");
+      const modalContent = modal.querySelector(".modal-content");
       const openModalBtn = document.getElementById("openModalBtn");
       const closeModalBtn = document.getElementById("closeModalBtn");
 
       // When the user clicks the button, open the modal
       openModalBtn.onclick = function () {
         modal.style.display = "flex";
+
+        setTimeout(() => {
+          modal.classList.add("show"); // Add the 'show' class to the modal
+          modalContent.classList.add("show"); // Add the 'show' class to the modal content
+          modal.style.pointerEvents = "auto"; // Enable interaction
+        }, 10); // Small delay to allow CSS transitions
       }
 
-      // When the user clicks on <span> (x), close the modal
+      // When the user clicks on <span> (x), close the modal with animation
       closeModalBtn.onclick = function () {
-        modal.style.display = "none";
-      }
+        modal.classList.remove("show"); // Remove the 'show' class from the modal
+        modalContent.classList.remove("show"); // Remove the 'show' class from the modal content
+        setTimeout(() => {
+          modal.style.display = "none"; // Hide the modal after animation
+          modal.style.pointerEvents = "none"; // Disable interaction when hidden
+        }, 300); // Delay matches the CSS animation duration
+      };
 
-      // When the user clicks anywhere outside of the modal, close it
+      // When the user clicks anywhere outside of the modal, close it with animation
       window.onclick = function (event) {
         if (event.target === modal) {
-          modal.style.display = "none";
+          modal.classList.remove("show"); // Remove the 'show' class from the modal
+          modalContent.classList.remove("show"); // Remove the 'show' class from the modal content
+          setTimeout(() => {
+            modal.style.display = "none"; // Hide the modal after animation
+            modal.style.pointerEvents = "none"; // Disable interaction when hidden
+          }, 300); // Delay matches the CSS animation duration
         }
       };
+
     }
   </script>
   <!-- chatgpt script -->
